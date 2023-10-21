@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:velocity/constants/assets.dart';
 
-class RectangleBanner extends StatelessWidget {
-  const RectangleBanner({super.key});
+class SquareBanner extends StatelessWidget {
+  const SquareBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +11,8 @@ class RectangleBanner extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10), // Same as Card's borderRadius
         child: SizedBox(
-          height: 120,
-          width: 200,
+          height: 110,
+          width: 110,
           child: Image.asset(
             AssetsImages.instance.jsImage,
             fit: BoxFit.fill, // Ensure the image covers the entire area

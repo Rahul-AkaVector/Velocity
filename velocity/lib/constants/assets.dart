@@ -3,7 +3,7 @@ class AssetsImages {
 
   static const String _imagesPath = "assets/images";
 
-  String javascriptImage = "$_imagesPath/courses/js.png";
+  String jsImage = "$_imagesPath/courses/js.png";
   String welcomeImage = "$_imagesPath/welcome/welcome.png";
 }
 
