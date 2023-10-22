@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:velocity/views/screens/home/home.dart';
-import 'package:velocity/views/screens/profile/profile.dart';
-import 'package:velocity/views/screens/save/save.dart';
-import 'package:velocity/views/screens/search/search.dart';
+import 'package:velocity/controllers/navigation_controller.dart';
+// import 'package:velocity/views/screens/home/home.dart';
+// import 'package:velocity/views/screens/profile/profile.dart';
+// import 'package:velocity/views/screens/save/save.dart';
+// import 'package:velocity/views/screens/search/search.dart';
 
 class Navigation extends StatelessWidget {
   const Navigation({super.key});
@@ -79,13 +79,13 @@ class Navigation extends StatelessWidget {
   }
 }
 
-class NavigationController extends GetxController {
-  final Rx<int> selectedIndex = 0.obs;
+// class NavigationController extends GetxController {
+//   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [
-    const Home(),
-    const SearchPage(),
-    const Save(),
-    const Profile(),
-  ];
-}
+//   final screens = [
+//     const Home(),
+//     const SearchPage(),
+//     const Save(),
+//     const Profile(),
+//   ];
+// }
