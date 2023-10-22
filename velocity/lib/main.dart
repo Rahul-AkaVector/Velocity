@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:velocity/views/screens/home/home.dart';
+// import 'package:velocity/views/screens/home/home.dart';
+import 'package:velocity/views/screens/navigation_menu/navigation_menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Velocity',
-      home: Home(),
+      home: Navigation(),
     );
   }
 }

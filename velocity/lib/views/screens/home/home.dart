@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:velocity/constants/assets.dart';
+// import 'package:velocity/constants/assets.dart';
 import 'package:velocity/views/widgets/cards.dart';
 import 'package:velocity/views/widgets/titles/section_title.dart';
 import 'package:velocity/views/widgets/widgets.dart';
@@ -14,13 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xff161a1d),
-      appBar: AppBar(
-        toolbarHeight: 70,
-        backgroundColor: Color(0xff2b2d42),
-      ),
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         // physics: AlwaysScrollableScrollPhysics(),
         child: Column(
@@ -103,7 +97,6 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
