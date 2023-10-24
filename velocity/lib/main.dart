@@ -1,10 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:velocity/constants/theme.dart';
+import 'package:velocity/firebase/firebase_options/firebase_options.dart';
 // import 'package:velocity/views/screens/home/home.dart';
 import 'package:velocity/views/screens/navigation_menu/navigation_menu.dart';
 
-void main() {
+void main() async {
+  dotenv.load();
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaulFirebaseConfig.platformOptions,
+  );
+
   runApp(const MyApp());
 }
 
