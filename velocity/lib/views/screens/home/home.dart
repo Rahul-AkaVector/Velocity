@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:velocity/constants/assets.dart';
+import 'package:velocity/firebase/firebase_firestore_helper/firebase_firestore_helper.dart';
 import 'package:velocity/models/course_list_model/course_list_model.dart';
 // import 'package:velocity/constants/assets.dart';
 import 'package:velocity/views/widgets/cards.dart';
@@ -14,7 +15,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // List<CourseListModel> coursesList = [];
+  List<CourseListModel> coursesList = [];
+
+  @override
+  void initState() {
+    getCategoryList();
+    super.initState();
+  }
+
+  void getCategoryList() async {
+    coursesList = await FirebaseFirestoreHelper.instance.getList();
+    coursesList.shuffle();
+    print(coursesList);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,27 +201,27 @@ class _HomeState extends State<Home> {
 }
 
 List<CourseListModel> coursesList = [
-  CourseListModel(
-      image: "https://img-c.udemycdn.com/course/480x270/2773488_8963.jpg",
-      name: "Python"),
-  CourseListModel(
-      image:
-          "https://user-images.githubusercontent.com/67586773/105040771-43887300-5a88-11eb-9f01-bee100b9ef22.png",
-      name: "NumPy"),
-  CourseListModel(
-      image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/SCIPY_2.svg/1200px-SCIPY_2.svg.png",
-      name: "SciPy"),
-  CourseListModel(
-      image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenCV_Logo_with_text_svg_version.svg/1662px-OpenCV_Logo_with_text_svg_version.svg.png",
-      name: "Open Cv"),
-  CourseListModel(
-      image:
-          "https://verbose-equals-true.gitlab.io/django-postgres-vue-gitlab-ecs/django.jpg",
-      name: "Django"),
-  CourseListModel(
-      image:
-          "https://www.probytes.net/wp-content/uploads/2018/10/flask-logo-png-transparent.png",
-      name: "Flask"),
+  // CourseListModel(
+  //     image: "https://img-c.udemycdn.com/course/480x270/2773488_8963.jpg",
+  //     name: "Python"),
+  // CourseListModel(
+  //     image:
+  //         "https://user-images.githubusercontent.com/67586773/105040771-43887300-5a88-11eb-9f01-bee100b9ef22.png",
+  //     name: "NumPy"),
+  // CourseListModel(
+  //     image:
+  //         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/SCIPY_2.svg/1200px-SCIPY_2.svg.png",
+  //     name: "SciPy"),
+  // CourseListModel(
+  //     image:
+  //         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenCV_Logo_with_text_svg_version.svg/1662px-OpenCV_Logo_with_text_svg_version.svg.png",
+  //     name: "Open Cv"),
+  // CourseListModel(
+  //     image:
+  //         "https://verbose-equals-true.gitlab.io/django-postgres-vue-gitlab-ecs/django.jpg",
+  //     name: "Django"),
+  // CourseListModel(
+  //     image:
+  //         "https://www.probytes.net/wp-content/uploads/2018/10/flask-logo-png-transparent.png",
+  //     name: "Flask"),
 ];
