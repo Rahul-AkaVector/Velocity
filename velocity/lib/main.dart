@@ -8,7 +8,7 @@ import 'package:velocity/firebase/firebase_options/firebase_options.dart';
 import 'package:velocity/views/screens/navigation_menu/navigation_menu.dart';
 
 void main() async {
-  dotenv.load();
+  await dotenv.load();
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

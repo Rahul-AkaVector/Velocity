@@ -12,6 +12,8 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
+
+     
     );
   }
 }
