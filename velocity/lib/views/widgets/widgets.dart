@@ -15,7 +15,7 @@ class RectangleBanner extends StatelessWidget {
           width: 200,
           child: Image.asset(
             AssetsImages.instance.jsImage,
-            fit: BoxFit.fill, // Ensure the image covers the entire area
+            fit: BoxFit.fitWidth, // Ensure the image covers the entire area
           ),
         ),
       ),
