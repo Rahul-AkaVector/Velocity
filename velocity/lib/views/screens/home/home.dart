@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
       isLoading = true;
     });
 
-    coursesList = await FirebaseFirestoreHelper.instance.getList();
+    coursesList = await FirebaseFirestoreHelper.instance.getBackendList();
     coursesList.shuffle();
 
     setState(() {

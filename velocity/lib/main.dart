@@ -32,3 +32,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//language : python , html , css , javascript
+//important tags : language , uiux, frontend, backend, course_all
