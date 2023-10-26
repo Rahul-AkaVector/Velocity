@@ -1,9 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:velocity/constants/assets.dart';
 import 'package:velocity/firebase/firebase_firestore_helper/firebase_firestore_helper.dart';
 import 'package:velocity/models/course_list_model/course_list_model.dart';
 // import 'package:velocity/constants/assets.dart';
 import 'package:velocity/views/widgets/cards.dart';
+import 'package:velocity/views/widgets/carousel_slider_widget.dart';
 import 'package:velocity/views/widgets/titles/section_title.dart';
 import 'package:velocity/views/widgets/widgets.dart';
 
@@ -15,6 +18,51 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // int activeIndex = 0;
+  // final urlImages = [
+  //   'assets/images/carousel_slider/carousel_image_00.jpg',
+  //   'assets/images/carousel_slider/carousel_image_01.jpg',
+  //   'assets/images/carousel_slider/carousel_image_02.jpg',
+  //   'assets/images/carousel_slider/carousel_image_03.jpg',
+  //   'assets/images/carousel_slider/carousel_image_04.jpg'
+  // ];
+
+  // Widget buildIndicator() => AnimatedSmoothIndicator(
+  //     effect: ExpandingDotsEffect(
+  //         dotHeight: 11,
+  //         dotWidth: 13,
+  //         dotColor: Color.fromARGB(201, 255, 255, 255),
+  //         activeDotColor: Color.fromARGB(255, 255, 255, 255)),
+  //     activeIndex: activeIndex,
+  //     count: urlImages.length);
+
+  // Widget buildImage(String urlImage, int index) => Container(
+  //       width: MediaQuery.of(context).size.width * 0.66,
+  //       margin: EdgeInsets.symmetric(horizontal: 15),
+  //       child: ClipRRect(
+  //         borderRadius: BorderRadius.circular(35),
+  //         child: Stack(
+  //           children: [
+  //             Image.asset(
+  //               urlImage,
+  //               fit: BoxFit.cover,
+  //               height: 200,
+  //               width: 300,
+  //             ),
+  //             Positioned.fill(
+  //               child: Container(
+  //                 padding: EdgeInsets.all(10),
+  //                 color: const Color.fromARGB(0, 0, 0, 0),
+  //                 child: Align(
+  //                   alignment: Alignment.bottomCenter,
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     );
+
   List<CourseListModel> coursesList = [];
   bool isLoading = false;
 
@@ -57,16 +105,25 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    height: 200,
-                    width: 400,
-                    decoration: BoxDecoration(
-                        color: Colors.deepPurpleAccent.shade100,
-                        borderRadius: BorderRadius.circular(15)),
-                  ),
-                ),
+                // CarouselSlider.builder(
+                //   itemCount: 5,
+                //   itemBuilder: (context, index, realIndex) {
+                //     final urlImage = urlImages[index];
+                //     // final carouselText = carouselTexts[index];
+                //     return buildImage(urlImage, index);
+                //   },
+                //   options: CarouselOptions(
+                //       height: 300,
+                //       onPageChanged: (index, reason) =>
+                //           setState(() => activeIndex = index),
+                //       autoPlay: true,
+                //       autoPlayInterval: const Duration(seconds: 3),
+                //       viewportFraction: 0.8),
+                // ),
+
+                CarouselSlider(items: [
+                  CarouselSliderWidget(),
+                ], options: CarouselOptions(height: 200)),
                 SizedBox(
                   height: 20,
                 ),
