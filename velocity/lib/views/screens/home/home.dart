@@ -4,9 +4,9 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:velocity/constants/assets.dart';
 import 'package:velocity/firebase/firebase_firestore_helper/firebase_firestore_helper.dart';
 import 'package:velocity/models/course_list_model/course_list_model.dart';
+import 'package:velocity/views/screens/home/carousel_slider.dart';
 // import 'package:velocity/constants/assets.dart';
 import 'package:velocity/views/widgets/cards.dart';
-import 'package:velocity/views/widgets/carousel_slider_widget.dart';
 import 'package:velocity/views/widgets/titles/section_title.dart';
 import 'package:velocity/views/widgets/widgets.dart';
 
@@ -121,9 +121,17 @@ class _HomeState extends State<Home> {
                 //       viewportFraction: 0.8),
                 // ),
 
-                CarouselSlider(items: [
-                  CarouselSliderWidget(),
-                ], options: CarouselOptions(height: 200)),
+                Padding(
+                  padding: const EdgeInsets.all(.0),
+                  child: HomeSlider(
+                    banners: [
+                      'assets/images/carousel_slider/carousel_image_00.jpg',
+                      'assets/images/carousel_slider/carousel_image_01.jpg',
+                      'assets/images/carousel_slider/carousel_image_02.jpg',
+                      'assets/images/carousel_slider/carousel_image_03.jpg',
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 20,
                 ),

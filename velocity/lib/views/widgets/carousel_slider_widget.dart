@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CarouselSliderWidget extends StatelessWidget {
-  const CarouselSliderWidget({super.key});
+  final String url;
+  const CarouselSliderWidget({super.key, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,7 @@ class CarouselSliderWidget extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Image(
-            image: AssetImage(
-                'assets/images/carousel_slider/carousel_image_00.jpg'),
+            image: AssetImage(url),
             fit: BoxFit.cover,
           ),
         ),
@@ -27,12 +27,38 @@ class CarouselSliderWidget extends StatelessWidget {
   }
 }
 
-
 class CircularContainer extends StatelessWidget {
-  const CircularContainer({super.key});
+  const CircularContainer({
+    super.key,
+    this.child,
+    this.width = 400,
+    this.height = 400,
+    this.radius = 400,
+    this.margin,
+    this.padding = 0,
+    this.backgroundColor = Colors.white,
+  });
+
+  final double? width;
+  final double? height;
+  final double radius;
+  final EdgeInsets? margin;
+  final double padding;
+  final Widget? child;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      width: width,
+      height: height,
+      margin: margin,
+      padding: EdgeInsets.all(padding),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius),
+        color: backgroundColor,
+      ),
+      child: child,
+    );
   }
 }
