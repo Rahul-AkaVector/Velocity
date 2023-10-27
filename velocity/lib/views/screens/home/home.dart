@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20,
                 ),
-                SectionTitle(title: "Trending"),
+                SectionTitle(title: "Start Your Journey"),
                 coursesList.isEmpty
                     ? Center(
                         child: Text(
@@ -180,7 +180,7 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20,
                 ),
-                SectionTitle(title: "Start Your Journey"),
+                SectionTitle(title: "Web Devlopment"),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(

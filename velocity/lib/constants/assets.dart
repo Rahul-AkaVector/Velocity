@@ -14,6 +14,9 @@ class AssetsFonts {
 
   String gothamFont = "$_fontsPath/Gotham-Black.otf";
   String heavitasFont = "$_fontsPath/Heavitas.ttf";
+  String emberBoldFont = "$_fontsPath/Ember_Bold.otf";
+  String emberLightFont = "$_fontsPath/Ember_Light.otf";
+  String emberRegularFont = "$_fontsPath/Ember_Regular.otf";
 }
 
 class AssetsCoursesImages {

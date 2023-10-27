@@ -38,8 +38,8 @@ class HomeSlider extends StatelessWidget {
           // ),
           // ],
           options: CarouselOptions(
-            height: 200,
-            viewportFraction: 0.9,
+            height: 230,
+            viewportFraction: 1,
             onPageChanged: (index, _) => controller.updatePageIndicator(index),
           ),
         ),
@@ -53,7 +53,7 @@ class HomeSlider extends StatelessWidget {
               children: [
                 for (int i = 0; i < banners.length; i++)
                   CircularContainer(
-                    width: 20,
+                    width: 16,
                     height: 4,
                     backgroundColor: controller.carouselCurrentIndex.value == i
                         ? const Color.fromARGB(255, 201, 202, 221)
