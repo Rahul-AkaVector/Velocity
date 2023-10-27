@@ -81,6 +81,8 @@ flutter:
     - assets/fonts/
     - assets/images/carousel_slider/
     - assets/images/courses/
+    - assets/images/courses/images/
+    - assets/images/courses/banners/
     - assets/lottie_files/
     - .env
 

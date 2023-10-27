@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
       isLoading = true;
     });
 
-    coursesList = await FirebaseFirestoreHelper.instance.getBackendList();
+    coursesList = await FirebaseFirestoreHelper.instance.getAllList();
     coursesList.shuffle();
 
     setState(() {
@@ -105,30 +105,15 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20,
                 ),
-                // CarouselSlider.builder(
-                //   itemCount: 5,
-                //   itemBuilder: (context, index, realIndex) {
-                //     final urlImage = urlImages[index];
-                //     // final carouselText = carouselTexts[index];
-                //     return buildImage(urlImage, index);
-                //   },
-                //   options: CarouselOptions(
-                //       height: 300,
-                //       onPageChanged: (index, reason) =>
-                //           setState(() => activeIndex = index),
-                //       autoPlay: true,
-                //       autoPlayInterval: const Duration(seconds: 3),
-                //       viewportFraction: 0.8),
-                // ),
-
                 Padding(
                   padding: const EdgeInsets.all(.0),
                   child: HomeSlider(
                     banners: [
-                      'assets/images/carousel_slider/carousel_image_00.jpg',
-                      'assets/images/carousel_slider/carousel_image_01.jpg',
-                      'assets/images/carousel_slider/carousel_image_02.jpg',
-                      'assets/images/carousel_slider/carousel_image_03.jpg',
+                      AssetsCarouselSlider.instance.slider1,
+                      AssetsCarouselSlider.instance.slider2,
+                      AssetsCarouselSlider.instance.slider3,
+                      AssetsCarouselSlider.instance.slider4,
+                      AssetsCarouselSlider.instance.slider5,
                     ],
                   ),
                 ),
@@ -178,8 +163,11 @@ class _HomeState extends State<Home> {
                                       child: Container(
                                         decoration:
                                             BoxDecoration(color: Colors.white),
-                                        child: Image.network(
-                                          e.image,
+                                        // child: Image.network(
+                                        //   e.image,
+                                        // ),
+                                        child: Image.asset(
+                                          getImageForCourse(e.courseName),
                                         ),
                                       ),
                                     ),
@@ -247,8 +235,7 @@ class _HomeState extends State<Home> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Center(
-                                  child: Image.asset(
-                                      AssetsImages.instance.jsImage,
+                                  child: Image.asset(TestImage.instance.jsImage,
                                       fit: BoxFit
                                           .cover // Ensure the image covers the entire area
                                       ),

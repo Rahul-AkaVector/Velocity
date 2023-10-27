@@ -14,7 +14,7 @@ class SquareBanner extends StatelessWidget {
           height: 110,
           width: 110,
           child: Image.asset(
-            AssetsImages.instance.jsImage,
+            TestImage.instance.jsImage,
             fit: BoxFit.fill, // Ensure the image covers the entire area
           ),
         ),

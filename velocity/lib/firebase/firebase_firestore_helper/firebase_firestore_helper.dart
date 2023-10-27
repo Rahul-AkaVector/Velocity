@@ -43,4 +43,23 @@ class FirebaseFirestoreHelper {
       return [];
     }
   }
+
+  Future<List<CourseListModel>> getAllList() async {
+    try {
+      QuerySnapshot<Map<String, dynamic>> querySnapshot =
+          await _firebaseFirestore
+              .collectionGroup("courses")
+              .where('tags', arrayContains: 'tagname')
+              .get();
+
+      List<CourseListModel> courseList = querySnapshot.docs
+          .map((e) => CourseListModel.fromJson(e.data()))
+          .toList();
+      return courseList;
+    } catch (e) {
+      showMessage(e.toString());
+      print(e);
+      return [];
+    }
+  }
 }
