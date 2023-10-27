@@ -1,6 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:velocity/constants/assets.dart';
 import 'package:velocity/firebase/firebase_firestore_helper/firebase_firestore_helper.dart';
 import 'package:velocity/models/course_list_model/course_list_model.dart';
